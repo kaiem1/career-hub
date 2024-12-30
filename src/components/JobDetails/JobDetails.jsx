@@ -17,7 +17,7 @@ const JobDetails = () => {
     const job = jobs.find(job => job.id === idIt);
     console.log(job);
     return (
-        <div>
+        <div className="mb-32">
             <div className=" text-center m-20">
                 <h1 className="text-4xl font-bold justify-center">Job Details</h1>
             </div>
@@ -57,7 +57,7 @@ const JobDetails = () => {
                     </div>
 
                     
-                    <button className="btn btn-primary w-full">Apply Now</button>
+                    <button className="btn btn-primary w-full mt-4">Apply Now</button>
                 </div>
             </div>
         </div>
