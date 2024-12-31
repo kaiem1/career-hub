@@ -4,7 +4,8 @@ import { IoCalendar } from "react-icons/io5";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { MdOutlineMail } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
-
+import { ToastContainer, toast } from 'react-toastify';
+import { saveJobApplication } from "../utility/localstorage";
 
 
 
@@ -16,6 +17,12 @@ const JobDetails = () => {
     const idIt = parseInt(id);
     const job = jobs.find(job => job.id === idIt);
     console.log(job);
+
+    const handleApplyJOb = () =>{
+        saveJobApplication(id);
+        toast('You have applied successfully');
+    }
+
     return (
         <div className="mb-32">
             <div className=" text-center m-20">
@@ -57,8 +64,11 @@ const JobDetails = () => {
                     </div>
 
                     
-                    <button className="btn btn-primary w-full mt-4">Apply Now</button>
+                    <button onClick={handleApplyJOb} className="btn btn-primary w-full mt-4">Apply Now</button>
+                           
+                    
                 </div>
+                <ToastContainer />
             </div>
         </div>
     );
